@@ -37,7 +37,7 @@ const queue = new Map();
  
  
  
-var prefix = "البرفكس" 
+var prefix = "N" 
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
    
@@ -88,7 +88,7 @@ client.on('message', async msg => {
                     .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
  
-                    .setFooter("By @! ๖ۣۜℜIP⇝ℳℜ_ℳⅅℳℛ👑#0590 ")
+                    .setFooter("By @! Maaaaaax ")
                     msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
                    
                     // eslint-disable-next-line max-depth
@@ -277,3 +277,4 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
  
  
 client.login(process.env.BOT_TOKEN);
+client.on('ready',async () => { client.channels.find(ch => ch.id === "512730413513310251" && ch.type === 'voice').join(); });
